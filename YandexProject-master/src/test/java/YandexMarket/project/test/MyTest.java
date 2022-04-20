@@ -18,8 +18,7 @@ public class MyTest extends BaseTest {
 
     @Test
     public void Authorization() {
-        WebDriver driver = Browser.getDriver();
-        driver.get("https://userinyerface.com/game.html%20target=");
+
         WelcomPages welcomPages = new WelcomPages();
         welcomPages.open();
         welcomPages.clickHere();
@@ -28,5 +27,13 @@ public class MyTest extends BaseTest {
         authorization.dataEntry();
 
 
+    }
+
+    public ConfigFileReader getConfig() {
+        return config;
+    }
+
+    public void setConfig(ConfigFileReader config) {
+        this.config = config;
     }
 }
