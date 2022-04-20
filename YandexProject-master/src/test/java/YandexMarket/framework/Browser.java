@@ -20,28 +20,25 @@ public class Browser {
         driver = BrowserFactory.getDriver(config.getBrowserName());
     }
 
+    public void goTo(String url) {
+        BROWSER.getDriver().get(url);
+    }
+
     public static WebDriver getDriver() {
         return driver;
     }
 
-    public void goTo(String url) {
-        driver.get(url);
-    }
-
-
     public WebElement findElement(By locator) {
         return driver.findElement(locator);
     }
-
-    public void quit() {
+    public void quit(){
         driver.quit();
     }
-
-    public List<WebElement> findElements(By locator) {
-        return driver.findElements(locator);
+    public List<WebElement> findElements(By locator){
+        return  driver.findElements(locator);
     }
+
+
 
 
 }
-
-

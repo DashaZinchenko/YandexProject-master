@@ -10,7 +10,7 @@ public class BaseTest {
     private ConfigFileReader config = ConfigFileReader.configFileReader;
     @BeforeClass
        public void before(){
-        System.setProperty(config.getDriverAdapter(),config.getDriverPath());
+
         Browser.getDriver().manage().window().maximize();
     }
 }

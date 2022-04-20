@@ -10,15 +10,17 @@ import YandexMarket.utils.ConfigFileReader;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
 
 
 public class MyTest extends BaseTest {
-    private ConfigFileReader config = ConfigFileReader.configFileReader;
+    private final ConfigFileReader config = ConfigFileReader.configFileReader;
 
 
     @Test
-    public void Authorization() {
-
+    public void Authorization() throws IOException, InterruptedException {
+        WebDriver driver = Browser.getDriver();
+        driver.get("https://userinyerface.com/game.html%20target=");
         WelcomPages welcomPages = new WelcomPages();
         welcomPages.open();
         welcomPages.clickHere();
@@ -27,13 +29,5 @@ public class MyTest extends BaseTest {
         authorization.dataEntry();
 
 
-    }
-
-    public ConfigFileReader getConfig() {
-        return config;
-    }
-
-    public void setConfig(ConfigFileReader config) {
-        this.config = config;
     }
 }
